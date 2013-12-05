@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+    <head>
+        <title>JavaScript Robots</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="author" content="Thomas A. Valletta"/>
+        <link href="css/impress.css" rel="stylesheet"/>
+        <link href="css/prettify.css" rel="stylesheet"/>
+        <link href="css/presentation.css" rel="stylesheet"/>
+        <script type="text/javascript" src='js/jquery-1.8.2.min.js'></script>
+        <script type='text/javascript' src='js/lib/d3.v3.js'></script>
+        <script type='text/javascript'
+                src='js/lib/crossfilter.min.js'></script>
+        <script type="text/javascript" src='js/prettify.js'></script>
+    </head>
+    <body onload='prettyPrint()'>
+        <p class="fallback-message">
+            Your browser doesn't support impress.js. Try Chrome or Safari.
+        </p>
+
+        <div class="help">
+            <h3>Need Help?</h3>
+            <h6>Use the arrow keys move forward and back.</h6>
+        </div>
+        <div id="impress">
+
+
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+            BEGIN SLIDES
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+
+            <div id="title" class="step center clarify" data-x="0" data-y="0"
+                 data-z="0">
+                <img src="img/nodebot.png"/>
+                <div class="epic">jsbots</div>
+            </div>
+
+            <div class="step center clarify quote"
+                 data-x="1200" data-y="0" data-z="0" data-rotate-z="-90">
+                <div class="x-large">BOT-ELOP-ER \BOT-L-UP-ER\</div>
+                <div class="med">a person who enjoys mixing hardware with
+                    software to create interesting gadgets,
+                    useless contraptions or as seen on youtube inventions</div>
+            </div>
+
+            <img class="step"
+                 data-x="1200" data-y="1000" data-z="0"
+                 src="img/Arduino_Logo.png" style="width: 600px"/>
+
+            <img class="step invisible"
+                 data-x="1400" data-y="1200" data-z="600"
+                 data-rotate-y="60"
+                 src="img/Arduino-uno-perspective-transparent.png" style="width: 600px"/>
+
+            <div class="step center"
+                 data-x="-700" data-y="500" data-z="1200"
+                 style="background-image: url(img/robot.svg)">
+                <div class="epic">robo-parts</div>
+            </div>
+
+            <img class="step invisible"
+                 data-x="-700" data-y="1000" data-z="1200"
+                 src="img/servo.png" style="width: 300px"/>
+
+            <img class="step invisible"
+                 data-x="-700" data-y="1200" data-z="1200"
+                 src="img/ultra-sonic-Distanceranging-sensor.png" style="width: 300px"/>
+
+            <img class="step invisible"
+                 data-x="-700" data-y="1600" data-z="1200"
+                 src="img/sensors2.jpg"
+                 style="border: 17px solid gray; padding: 0; margin: 0"/>
+
+            <div class="step center invisible quote"
+                 data-x="-700" data-y="2000" data-z="1200">
+                <div class="large">...and we brought more than that in
+                    our carry-on bags.</div>
+            </div>
+
+            <div class="step center"
+                 data-x="-1800" data-y="-1500" data-z="800"
+                 data-rotate-z="-90">
+                <div class="epic">Programming Arduino</div>
+            </div>
+
+            <div class="step center"
+                 data-x="-1000" data-y="-1500" data-z="800"
+                 data-rotate-z="-90" data-rotate-x="180">
+                <div class="large">blink sketch</div>
+                <pre class="prettyprint"
+                     style="background-color: gainsboro; margin: auto; width:
+                      460px; text-align: left; padding: 30px; border: 17px
+                      solid gray; box-shadow: ">
+int led = 13;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(led, HIGH);
+  delay(1000);
+  digitalWrite(led, LOW);
+  delay(1000);
+}               </pre>
+                <div class="small">very C++ like</div>
+            </div>
+
+            <div class="step center quote"
+                 data-x="-100" data-y="-1500" data-z="800"
+                 data-rotate-z="-90" data-rotate-x="">
+                <div class="large">
+                    but what about<br>
+                    <span class="xx-large">Java, Python,</span><br>
+                    <span class="med">or even</span>
+                </div>
+            </div>
+
+            <img class="step center quote invisible"
+                 data-x="-100" data-y="-1800" data-z="900"
+                 data-rotate-z="-90" data-rotate-x="-60"
+                 src="img/512px-JavaScript-logo.png" style="width: 300px"/>
+
+            <div class="step center"
+                 data-x="600" data-y="-1500" data-z="800"
+                 data-rotate-z="-90" data-rotate-x="-180">
+                <div class="large">Johnny Five</div>
+                <pre class="prettyprint"
+                     style="background-color: gainsboro; margin: auto; width:
+                      460px; text-align: left; padding: 30px; border: 17px
+                      solid gray;">
+var five = require('johnny-five'),
+    board = new five.Board();
+
+board.on('ready', function() {
+  (new five.Led(13)).strobe();
+});               </pre>
+            </div>
+
+            <div class="step center"
+                 data-x="1600" data-y="-1700" data-z="0"
+                 data-rotate-z="" data-rotate-x="" data-scale="1">
+                <div class="focus-box med"
+                     style="width: 200px; margin: auto">
+                    <br>
+                    Node Serial Port<br>
+                    &nbsp;
+                </div><br>
+                <div class="focus-box med"
+                     style="width: 200px; margin: auto">
+                    <br>
+                    Firmata<br>
+                    &nbsp;
+                </div><br>
+                <div class="focus-box med"
+                     style="width: 200px; margin: auto">
+                    <br>
+                    Johnny Five<br>
+                    &nbsp;
+                </div>
+            </div>
+
+            <img class="step center"
+                 data-x="1600" data-y="-900" data-z="0"
+                 data-rotate-z="90" data-scale=".5"
+                 src="img/Potentiometer.svg"/>
+
+            <img class="step center"
+                 data-x="1200" data-y="-900" data-z="0"
+                 data-rotate-z="90" data-scale=".5"
+                 src="img/ThermoAndHumidity.svg"/>
+
+            <img class="step center"
+                 data-x="800" data-y="-900" data-z="0"
+                 data-rotate-z="90" data-scale=".5"
+                 src="img/bb-hourglass.svg"/>
+
+            <img class="step center"
+                 data-x="400" data-y="-900" data-z="0"
+                 data-rotate-z="90" data-scale=".5"
+                 src="img/bb-tugowar.svg"/>
+
+            <!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                    OUTLINE
+            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - --->
+
+
+
+            <div class="step invisible" data-x="0" data-y="0" data-z="5000">
+            </div>
+
+        </div>
+        <script type="text/javascript" src="js/impress.js"></script>
+        <script>
+            var el = document.getElementById("impress");
+            impress().init();
+
+            var timer;
+            var focusList = [];
+            var $help = $('.help');
+            var activeGroup;
+
+            el.addEventListener("impress:stepenter", function(event) {
+                setTimeout(function() {
+                    var $evt = $(event.target);
+
+                    var focus = $evt.attr('data-focus');
+                    if (focus) {
+                        var $target = $('[data-focus-id="' + focus + '"]');
+                        if ($target[0]) {
+                            $target.addClass('clarify');
+                            focusList.push($target);
+                        }
+                    }
+
+                    // Group Stuff
+                    var group = $evt.attr('data-group');
+                    if (group) {
+                        if (activeGroup) {
+                            if (activeGroup !== group) {
+                                $('[data-group="' + activeGroup + '"]').removeClass('stay');
+                                activeGroup = group;
+                            }
+                        }
+                        else {
+                            activeGroup = group;
+                        }
+                    }
+                    else {
+                        if (activeGroup) {
+                            $('[data-group="' + activeGroup + '"]').removeClass('stay');
+                            activeGroup = null;
+                        }
+                    }
+
+                    var onenter = $evt.attr('data-onenter');
+                    if (window[onenter]) window[onenter]();
+                }, 200);
+            }, false);
+
+            el.addEventListener("impress:stepleave", function(event) {
+                setTimeout(function() {
+                    var $evt = $(event.target);
+
+                    var stay = $evt.attr('data-stay');
+                    if (stay) {
+                        $evt.addClass('stay');
+                    }
+
+                    // Group Stuff
+                    var group = $evt.attr('data-group');
+                    if (group) {
+                        if (activeGroup && activeGroup === group) {
+                            if (!$evt.hasClass('nostay'))
+                                $evt.addClass('stay');
+                        }
+                    }
+
+                    for (var i = 0, cnt = focusList.length; i < cnt; i++) {
+                        focusList[i].removeClass('clarify');
+                    }
+                    focusList = [];
+
+                    var onleave = $evt.attr('data-onleave');
+                    if (window[onleave]) window[onleave]();
+                }, 200);
+            }, false);
+
+            function onGuidedEnter() {
+                timer = setTimeout(function() {
+                    $help.addClass('show');
+                }, 3000);
+            }
+            function onGuidedLeave() {
+                clearTimeout(timer);
+                $help.removeClass('show');
+            }
+        </script>
+    </body>
+</html>
